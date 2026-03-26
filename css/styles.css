@@ -252,10 +252,17 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 /* Mobile CTA button inside dropdown */
 .nav-menu .btn-lms {
-  width: 100%;
+  width: 142px;
   justify-content: center;
   padding: 0.85rem 1rem;
   text-align: center;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.9375rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  display: inline-block;
 }
 
 .nav-list {
@@ -326,9 +333,54 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 .nav-list .btn-lms.active {
   background: var(--accent) !important;
 }
-
+/*
 .nav-list .btn-lms.active:hover {
   background: var(--accent-hover) !important;
+}
+*/
+/* Welcome to America tab uses provided banner image (instead of text) */
+.nav-list a.btn-lms[href="welcome-to-america.html"] {
+  background: url('../assets/welcome-to-america-tab.png') center / 100% 100% no-repeat !important;
+  position: relative;
+  overflow: hidden;
+  color: transparent !important; /* hide any remaining text color */
+  box-shadow: none !important;
+
+}
+
+.nav-list a.btn-lms[href="welcome-to-america.html"]::before,
+.nav-list a.btn-lms[href="welcome-to-america.html"]::after {
+  content: none !important;
+}
+
+/* Hide inner fallback flag/text spans; the button background contains the banner */
+.nav-list a.btn-lms[href="welcome-to-america.html"] .nav-flag,
+.nav-list a.btn-lms[href="welcome-to-america.html"] .nav-flag-text {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: nowrap;
+  opacity: 0; /* keep layout size, but hide visual content */
+}
+
+/* .nav-list a.btn-lms[href="welcome-to-america.html"].active,
+.nav-list a.btn-lms[href="welcome-to-america.html"].active:hover {
+  background: url('../assets/welcome-to-america-tab.png') center / cover no-repeat !important;
+  color: transparent !important;
+} */
+
+/* Keep the pill sizing reasonable when using the banner image */
+.nav-list a.btn-lms[href="welcome-to-america.html"] {
+  padding-left: 1.15rem !important;
+  padding-right: 1.15rem !important;
+  width: 141px;
+  height: 41px;
+  border-radius: 14px;
+  display: block;
 }
 @media (max-width: 1179px) {
 .nav-menu {
@@ -459,11 +511,11 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   }
 
   .nav-list .btn-lms {
-    padding: 0.48rem 0.9rem;
-    font-size: 0.86rem;
+    /* padding: 0.48rem 0.9rem; */
+    /* font-size: 0.86rem; */
     margin-left: 0.35rem;
-    gap: 0.25rem;
-  }
+    /* gap: 0.25rem; */
+}
 
   /* Keep extra gap between the two CTA buttons smaller on tight desktops */
   .nav-list li:has(> a.btn-lms) + li:has(> a.btn-lms) {
@@ -489,6 +541,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+ 
 }
 
 /* CTA Button in header */

@@ -265,6 +265,13 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   display: inline-block;
 }
 
+/* Welcome to America label is longer than LMS — never use fixed 142px width */
+.nav-menu .btn-lms.btn-lms-america {
+  width: auto;
+  min-width: min-content;
+  max-width: 100%;
+}
+
 .nav-list {
   display: flex;
   flex-direction: column;
@@ -338,49 +345,127 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   background: var(--accent-hover) !important;
 }
 */
-/* Welcome to America tab uses provided banner image (instead of text) */
-.nav-list a.btn-lms[href="welcome-to-america.html"] {
-  background: url('../assets/welcome-to-america-tab.png') center / 100% 100% no-repeat !important;
+/*
+ * Welcome to America — header button only (American flag palette).
+ * Old Glory Red #B22234 · Blue #3C3B6E · White #FFFFFF
+ */
+.btn-lms.btn-lms-america {
+  --flag-red: #b22234;
+  --flag-blue: #3c3b6e;
+  --flag-white: #ffffff;
   position: relative;
-  overflow: hidden;
-  color: transparent !important; /* hide any remaining text color */
-  box-shadow: none !important;
-
-}
-
-.nav-list a.btn-lms[href="welcome-to-america.html"]::before,
-.nav-list a.btn-lms[href="welcome-to-america.html"]::after {
-  content: none !important;
-}
-
-/* Hide inner fallback flag/text spans; the button background contains the banner */
-.nav-list a.btn-lms[href="welcome-to-america.html"] .nav-flag,
-.nav-list a.btn-lms[href="welcome-to-america.html"] .nav-flag-text {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
   overflow: visible;
-  clip: auto;
+  isolation: isolate;
+  z-index: 1;
+  max-width: none;
   white-space: nowrap;
-  opacity: 0; /* keep layout size, but hide visual content */
+  font-weight: 600;
+
+  font-size: clamp(0.62rem, 0.85vw, 0.8rem);
+  line-height: 1.25;
+  text-align: center;
+  color: var(--flag-white) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  border: none !important;
+  border-radius:0 10px 10px 10px !important;
+  padding: 0.55rem 1.15rem!important;
+  background-color: var(--flag-red) !important;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      var(--flag-red) 0 2px,
+      var(--flag-white) 2px 4px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--flag-red) 0 3px,
+      var(--flag-white) 3px 6px
+    ) !important;
+  background-size: 100% 8px, 100% 18px !important;
+  background-position: center top, center bottom !important;
+  background-repeat: no-repeat, no-repeat !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.22s ease,
+    box-shadow 0.22s ease !important;
 }
 
-/* .nav-list a.btn-lms[href="welcome-to-america.html"].active,
-.nav-list a.btn-lms[href="welcome-to-america.html"].active:hover {
-  background: url('../assets/welcome-to-america-tab.png') center / cover no-repeat !important;
-  color: transparent !important;
-} */
+/* Left ribbon: vertical RWB */
+.btn-lms.btn-lms-america::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    var(--flag-blue) 0%,
+    var(--flag-blue) 33.33%,
+    var(--flag-white) 33.33%,
+    var(--flag-white) 66.66%,
+    var(--flag-red) 66.66%,
+    var(--flag-red) 100%
+  );
+}
 
-/* Keep the pill sizing reasonable when using the banner image */
-.nav-list a.btn-lms[href="welcome-to-america.html"] {
-  padding-left: 1.15rem !important;
-  padding-right: 1.15rem !important;
-  width: 141px;
-  height: 41px;
-  border-radius: 14px;
-  display: block;
+.btn-lms.btn-lms-america:hover,
+.nav-menu .btn-lms.btn-lms-america:hover {
+  color: var(--flag-white) !important;
+  transform: translateY(-3px) scale(1.01);
+  filter: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  background: var(--flag-blue) !important;
+  background-image: none !important;
+  box-shadow: 0 6px 20px rgba(60, 59, 110, 0.45) !important;
+}
+
+.btn-lms.btn-lms-america:focus-visible {
+  outline: 2px solid var(--flag-white);
+  outline-offset: 3px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+}
+
+.nav-list .btn-lms.btn-lms-america.active,
+.nav-list .btn-lms.btn-lms-america[aria-current="page"] {
+  text-decoration: none !important;
+  color: var(--flag-white) !important;
+  background: #8b1528 !important;
+  background-image: none !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.nav-list .btn-lms.btn-lms-america.active:hover,
+.nav-list .btn-lms.btn-lms-america[aria-current="page"]:hover {
+  background: var(--flag-blue) !important;
+  filter: none;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 6px 20px rgba(60, 59, 110, 0.45) !important;
+}
+
+/* Mobile drawer only: wrap label; compact — do not apply on desktop (prevents 2-line breakout) */
+@media (max-width: 1179px) {
+  .nav-menu .btn-lms.btn-lms-america {
+    width: auto;
+    min-width: min-content;
+    max-width: 100%;
+    white-space: normal;
+    hyphens: auto;
+    padding: 0.55rem 1rem !important;
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Desktop: keep CTA on one line */
+@media (min-width: 1180px) {
+  .nav-list .btn-lms.btn-lms-america {
+    white-space: nowrap;
+    max-width: none;
+  }
 }
 @media (max-width: 1179px) {
 .nav-menu {
@@ -496,30 +581,31 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   .nav-list .btn-lms:hover {
     filter: brightness(1.05);
   }
+
+  .nav-list .btn-lms.btn-lms-america:hover {
+    filter: none;
+  }
 }
 
-/* Desktop but tighter widths: keep single-line and reduce spacing */
-@media (min-width: 1180px) and (max-width: 1280px) {
+/* Desktop but tighter widths (laptops / small windows): nav + America CTA compact */
+@media (min-width: 1180px) and (max-width: 1440px) {
   .nav-list {
     flex-wrap: nowrap;
-    gap: 0.1rem;
+    gap: 0.08rem;
   }
 
   .nav-list a {
-    padding: 0.45rem 0.6rem;
-    font-size: 0.82rem;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.8rem;
   }
 
   .nav-list .btn-lms {
-    /* padding: 0.48rem 0.9rem; */
-    /* font-size: 0.86rem; */
-    margin-left: 0.35rem;
-    /* gap: 0.25rem; */
-}
+    margin-left: 0.3rem;
+  }
 
   /* Keep extra gap between the two CTA buttons smaller on tight desktops */
   .nav-list li:has(> a.btn-lms) + li:has(> a.btn-lms) {
-    margin-left: 0.55rem;
+    margin-left: 0.45rem;
   }
 
   /* Make the flag icon a bit smaller + tighter spacing */
@@ -534,15 +620,26 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   }
 
   .header-inner {
-    gap: 0.7rem;
+    gap: 0.55rem;
   }
 
   .header .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
   }
 
+  /* Welcome to America: smaller type, thin ribbon — avoids overlap with Contact */
  
+
+  .nav-list .btn-lms.btn-lms-america::before {
+    width: 3px;
+  }
+
+  .nav-list .btn-lms.btn-lms-america:hover,
+  .nav-list .btn-lms.btn-lms-america.active:hover,
+  .nav-list .btn-lms.btn-lms-america[aria-current="page"]:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* CTA Button in header */
@@ -642,7 +739,9 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 @media (prefers-reduced-motion: reduce) {
   .btn-lms:hover,
-  .nav-menu .btn-lms:hover {
+  .nav-menu .btn-lms:hover,
+  .btn-lms.btn-lms-america:hover,
+  .nav-menu .btn-lms.btn-lms-america:hover {
     transform: none;
   }
 

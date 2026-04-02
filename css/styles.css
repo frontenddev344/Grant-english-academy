@@ -1917,7 +1917,7 @@ a.btn.btn-secondary.arrow-revrt svg {
 }
 
 /* Welcome to America page: patriotic red/white/blue treatment */
-body.welcome-america-page .welcome-america .scenario-card {
+.welcome-america-page.welcome-america .scenario-card {
   --usa-accent: #0b3979;
   --usa-soft: #eef4ff;
   --usa-border: rgba(11, 57, 121, 0.34);
@@ -1931,7 +1931,7 @@ body.welcome-america-page .welcome-america .scenario-card {
     0 0 0 1px rgba(255, 255, 255, 0.75) inset;
 }
 
-body.welcome-america-page .welcome-america .scenario-card:hover {
+.welcome-america-page.welcome-america .scenario-card:hover {
   border-color: var(--usa-accent);
   transform: translateY(-6px);
   box-shadow:
@@ -1939,28 +1939,28 @@ body.welcome-america-page .welcome-america .scenario-card:hover {
     0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 }
 
-body.welcome-america-page .welcome-america .scenario-card:nth-child(3n + 1) {
+.welcome-america-page.welcome-america .scenario-card:nth-child(3n + 1) {
   --usa-accent: #c12433;
   --usa-soft: #fff2f4;
   --usa-border: rgba(193, 36, 51, 0.34);
   --usa-ribbon: linear-gradient(90deg, #b22234 0%, #fbd0d6 55%, #ffffff 100%);
 }
 
-body.welcome-america-page .welcome-america .scenario-card:nth-child(3n + 2) {
+.welcome-america-page.welcome-america .scenario-card:nth-child(3n + 2) {
   --usa-accent: #ffffff;
   --usa-soft: #ffffff;
   --usa-border: rgba(131, 146, 171, 0.45);
   --usa-ribbon: linear-gradient(90deg, #b22234 0%, #ffffff 50%, #0b3979 100%);
 }
 
-body.welcome-america-page .welcome-america .scenario-card:nth-child(3n + 3) {
+.welcome-america-page.welcome-america .scenario-card:nth-child(3n + 3) {
   --usa-accent: #0b3979;
   --usa-soft: #eef4ff;
   --usa-border: rgba(11, 57, 121, 0.35);
   --usa-ribbon: linear-gradient(90deg, #ffffff 0%, #adc3e8 45%, #0b3979 100%);
 }
 
-body.welcome-america-page .welcome-america .scenario-card::before {
+.welcome-america-page.welcome-america .scenario-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1972,7 +1972,7 @@ body.welcome-america-page .welcome-america .scenario-card::before {
   opacity: 0.95;
 }
 
-body.welcome-america-page .welcome-america .scenario-card::after {
+.welcome-america-page.welcome-america .scenario-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -1984,7 +1984,7 @@ body.welcome-america-page .welcome-america .scenario-card::after {
   opacity: 0.9;
 }
 
-body.welcome-america-page .welcome-america .scenario-icon.scenario-image::after {
+.welcome-america-page.welcome-america .scenario-icon.scenario-image::after {
   background: linear-gradient(
     180deg,
     rgba(11, 57, 121, 0.06) 0%,
@@ -1993,34 +1993,34 @@ body.welcome-america-page .welcome-america .scenario-icon.scenario-image::after 
   );
 }
 
-body.welcome-america-page .welcome-america .scenario-card .card-body {
+.welcome-america-page.welcome-america .scenario-card .card-body {
   background: rgba(255, 255, 255, 0.94);
   border-top: 3px solid var(--usa-accent);
   padding: 1.2rem 1.2rem 1.35rem;
 }
 
-body.welcome-america-page .welcome-america .scenario-card .card-body h3 {
+.welcome-america-page.welcome-america .scenario-card .card-body h3 {
   color: #b22234;
 }
 
-body.welcome-america-page .welcome-america .scenario-card .card-body p {
+.welcome-america-page.welcome-america .scenario-card .card-body p {
   color: #364e6e;
   line-height: 1.58;
 }
 
-body.welcome-america-page .welcome-america .scenario-card:focus-visible {
+.welcome-america-page.welcome-america .scenario-card:focus-visible {
   outline: 3px solid #0b3979;
 }
 
-body.welcome-america-page .welcome-america .section-label {
+.welcome-america-page.welcome-america .section-label {
   color: #b22234;
 }
 
-body.welcome-america-page .welcome-america .section-title {
+.welcome-america-page.welcome-america .section-title {
   color: #0b3979;
 }
 
-body.welcome-america-page .welcome-america .text-center .btn.btn-primary {
+.welcome-america-page.welcome-america .text-center .btn.btn-primary {
   border: 2px solid transparent;
   color: #ffffff;
   background-image:
@@ -2031,13 +2031,13 @@ body.welcome-america-page .welcome-america .text-center .btn.btn-primary {
   box-shadow: 0 12px 28px rgba(11, 57, 121, 0.26);
 }
 
-body.welcome-america-page .welcome-america .text-center .btn.btn-primary:hover {
+.welcome-america-page.welcome-america .text-center .btn.btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 34px rgba(11, 57, 121, 0.30);
   filter: saturate(1.06);
 }
 
-body.welcome-america-page .welcome-america-how-card {
+.welcome-america-page.welcome-america-how-card {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(11, 57, 121, 0.24);
@@ -2049,7 +2049,7 @@ body.welcome-america-page .welcome-america-how-card {
     0 0 0 1px rgba(255, 255, 255, 0.8) inset;
 }
 
-body.welcome-america-page .welcome-america-how-card::before {
+.welcome-america-page.welcome-america-how-card::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2061,7 +2061,7 @@ body.welcome-america-page .welcome-america-how-card::before {
   pointer-events: none;
 }
 
-body.welcome-america-page .welcome-america-how-card::after {
+.welcome-america-page.welcome-america-how-card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -2071,13 +2071,13 @@ body.welcome-america-page .welcome-america-how-card::after {
     radial-gradient(ellipse 58% 46% at 88% 88%, rgba(60, 59, 110, 0.10) 0%, transparent 62%);
 }
 
-body.welcome-america-page .welcome-america-how-card h3 {
+.welcome-america-page.welcome-america-how-card h3 {
   color: #b22234;
   position: relative;
   z-index: 1;
 }
 
-body.welcome-america-page .welcome-america-how-card p {
+.welcome-america-page.welcome-america-how-card p {
   color: #223a59;
   position: relative;
   z-index: 1;

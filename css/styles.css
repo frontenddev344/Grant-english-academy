@@ -267,11 +267,28 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 /* Welcome to America label is longer than LMS — never use fixed 142px width */
 .nav-menu .btn-lms.btn-lms-america {
-  width: auto;
-  min-width: min-content;
-  max-width: 100%;
+    width: auto;
+    min-width: min-content;
+    max-width: 100%;
 }
+.nav-menu .btn-lms.btn-lms-america.btn-america{
+     background-image: url("../assets/america-btn.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+        box-shadow: unset !important;
+}
+.nav-menu .btn-lms.btn-lms-america.btn-america:hover {
+    background: url("../assets/america-btn.png") !important;
+    transform: none !important;
+    background-position: center !important;
+    opacity: 0.9;
+         box-shadow: unset !important;
 
+}
+.nav-menu .btn-lms.btn-lms-america.btn-america:before {
+    content: unset;
+}
 .nav-list {
   display: flex;
   flex-direction: column;

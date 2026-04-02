@@ -366,7 +366,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
   color: var(--flag-white) !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   border: none !important;
-  border-radius: 0 10px 10px 00px !important;
+  border-radius: 10px!important;
   padding: 0.55rem 1.15rem!important;
   background: var(--flag-red) !important;
   /* background-image: repeating-linear-gradient(

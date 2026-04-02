@@ -462,6 +462,10 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 
 /* Mobile drawer only: wrap label; compact — do not apply on desktop (prevents 2-line breakout) */
 @media (max-width: 1179px) {
+  .nav-menu .btn-lms.btn-lms-america.btn-america {
+    padding: 13px 10px !important;
+    font-size: 11px;
+}
   .nav-menu .btn-lms.btn-lms-america {
     width: auto;
     min-width: min-content;
